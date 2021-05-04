@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Menu</title>
+    <style>
+      #image_grid {
+        align-items: center;
+        display: flex;
+        gap: 30px;
+      }
+    </style>
+    <script>
+      fetch("https://reqres.in/api/users")
+        .then((response) => response.json())
+        .then((json) => {
+          for (let i = 0; i < json.data.length; i++) {
+            var avatar = json.data[i].avatar;
+            document.querySelector("#image_grid").innerHTML +=
+              `<img src="${avatar}" id="${i}" onClick="open_post(this.id)">` +
+              "<br/>";
+          }
+
+      function open_post(image_id) {
+        console.log(image_id + "");
+        var url = "post.html?image_id=" + encodeURIComponent(image_id);
+        document.location.href = url;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>My Images</h1>
+    <div id="image_grid"></div>
+  </body>
+</html>
