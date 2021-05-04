@@ -2,94 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        /* Style the top navigation bar */
-        .topnavigator {
-            overflow: hidden;
-            /*background-color: #333;*/
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            /*background-image: url("/Users/huybuithanh/Downloads/media/GrpAssn/src/Resources/background.jpeg");*/
+            background-size: 2550px;
+            background-position: center;
         }
 
-
-
-        /* Change color on hover */
-        .topnavigator a:hover {
-            background-color: #ddd;
-            color: black;
+        h1 {
+            text-align: center;
         }
 
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
 
-        .instagram {
+        /* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+        /* Create four equal columns that sits next to each other */
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+        }
+
+        *{
+            box-sizing: border-box;
+        }
+
+        .formSignUp{
+            text-align: center;
+            border-left: 0px;
+            border: 1px solid black;
+        }
+
+        input[type = text], input[type = password]{
+            width: 400px;
+            padding: 15px;
+            margin: 5px 0 22px 0;
             display: inline-block;
-            width: 45px;
-            height: 45px;
-            text-align: center;
-            border-radius: 30px;
-            color: #fff;
-            font-size: 25px;
-            line-height: 45px;
-            vertical-align: middle;
-            background: #d6249f;
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-            box-shadow:  3px 10px rgba(0,0,0,.25);
+            border: none;
+            background: #f1f1f1;
         }
 
-        .intro {
-            font-family: "Verdana",serif;
-            float: right;
-            display: block;
-            background-color: red;
-            border-radius: 40px;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .signUp, .login{
-            font-family: "Verdana",serif;
-            float: right;
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .topheading {
-            text-align: center;
-            font-family: "Verdana",serif;
-        }
-
-        .secondheading {
-            color: rgb(255, 165, 0);
-            text-align: center;
-            font-family: "Verdana", serif;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: 240px 240px 240px 240px 240px;
-            grid-template-rows: 30px 30px;
-            grid-auto-flow: column;
+        input[type = text]:focus, input[type = password]:focus{
+            background: #ddd;
+            outline: none;
         }
     </style>
 </head>
 <body>
-    <br>
-    <div class="topnavigator">
-        <a href="#" class="instagram"><i class="fa fa-instagram"></i> </a>
-        <a href="#" class="signUp">Sign Up</a>
-        <a href="#" class="login">Log in</a>
-        <a href="#" class="intro">Introduction</a>
+
+    <div class="row">
+        <div class="column">
+            <br><br><br><br><br><br><br><br><br>
+            <h1>Sign up </h1>
+            <h1>& Join us today</h1>
+        </div>
+        <div class="column">
+            <br><br><br><br>
+            <form class="formSignUp"action="">
+                <label for="fullName">Full Name:</label><br>
+                <input type="text" name="fullName" placeholder="Enter Full Name"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" name="password" placeholder="Enter Password"><br>
+                <label for="repeatPassword">Repeat Password:</label><br>
+                <input type="password" name="repeatPassword" placeholder="Repeat Password"><br>
+                <label for="Age">Age:</label><br>
+                <input type="text" name="Age" placeholder="Enter Age"><br>
+                <label for="email">Email: </label><br>
+                <input type="text" name="email" placeholder="Enter Email"><br>
+                <input type="checkbox">
+                <label for="remember">Remember me</label><br>
+                <label for="">By creating an account you accept to our <a style="color: dodgerblue;">Terms & Privacy</a></label><br><br>
+            <button type="submit" class="submitButton" style="width: 20%; height: 40%;">Submit</button><br><br>
+            <label for="">Already a member? <a href="Log In.html">Click here</a></label>
+        </form>
+        </div>
+        <div class="column">
+
+        </div>
     </div>
-    <br>
-    <h1 class = "topheading">Choose your own idea</h1>
-    <h1 class = "secondheading">weekend dinner</h1>
-<!--    <div class="container">-->
-    <img src="/Resources/spaghetti.jpeg" alt="Spaghetti">
-<!--        <img src=""-->
-<!--    </div>-->
+
+
 </body>
 </html>
