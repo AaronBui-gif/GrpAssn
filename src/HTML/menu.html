@@ -4,35 +4,203 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Menu</title>
+    <title>My Website</title>
+
+    <!-- Bootstrap Library -->
+    <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css" />
+    <script src="../../Bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS -->
     <style>
-      #image_grid {
+      html,
+      body {
+        height: max-content;
+      }
+      #popular_image {
         align-items: center;
         display: flex;
         gap: 30px;
       }
+
+      #cover {
+        padding-left: 5em;
+        background: #222 no-repeat;
+        background-size: cover;
+        color: white;
+        height: max-content;
+      }
+
+      #display_gallery {
+        scale: 80%;
+      }
     </style>
     <script>
+      // Fetching Image API
       fetch("https://reqres.in/api/users")
         .then((response) => response.json())
         .then((json) => {
           for (let i = 0; i < json.data.length; i++) {
             var avatar = json.data[i].avatar;
-            document.querySelector("#image_grid").innerHTML +=
+            document.querySelector("#popular_image").innerHTML +=
               `<img src="${avatar}" id="${i}" onClick="open_post(this.id)">` +
               "<br/>";
           }
         });
 
+      // Open new post on clicked image
       function open_post(image_id) {
         console.log(image_id + "");
-        var url = "post.html?image_id=" + encodeURIComponent(image_id);
-        document.location.href = url;
+        document.location.href = url =
+          "post.html?image_id=" + encodeURIComponent(image_id);
+      }
+
+      // Onload runs search parameter
+      window.onload = function () {
+        var url = document.location.href,
+          params = url.split("?")[1].split("&"),
+          data = {},
+          tmp;
+        for (var i = 0, l = params.length; i < l; i++) {
+          tmp = params[i].split("=");
+          data[tmp[0]] = tmp[1];
+        }
+
+        search_post(data.search);
+      };
+
+      // Search image post functions
+      function search_post(search_request) {
+        document.querySelector("h3").innerHTML += " " + search_request;
+        // Query Database and display results
+      }
+
+      // Function for testing UI
+      function show_images() {
+        for (let i = 0; i < 10; i++) {
+          document.querySelector("#popular_image").innerHTML +=
+            `<img src="${avatar}" id="${i}" onClick="open_post(this.id)">` +
+            "<br/>";
+        }
       }
     </script>
   </head>
   <body>
-    <h1>My Images</h1>
-    <div id="image_grid"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+            name="search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <section id="cover">
+      <h2>Discover popular creators</h2>
+      <div id="popular_image"></div>
+      <!-- <div id="search_menu">
+        <h3>Displaying search result for:</h3>
+        <div id="search_result"></div>
+      </div> -->
+
+      <h2>Discover popular images</h2>
+      <div id="display_gallery">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img
+              src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt=""
+            />
+
+            <img
+              src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt=""
+            />
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt=""
+            />
+
+            <img
+              src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt=""
+            />
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt=""
+            />
+
+            <img
+              src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
