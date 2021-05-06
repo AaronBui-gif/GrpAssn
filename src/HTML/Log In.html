@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("/Users/huybuithanh/Downloads/media/GrpAssn/src/Resources/background.jpeg");
+            background-size: 2550px;
+            background-position: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        /* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+        /* Create four equal columns that sits next to each other */
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+        }
+
+        *{
+            box-sizing: border-box;
+        }
+
+        .formSignUp{
+            text-align: center;
+            border-left: 0px;
+            border: 1px solid black;
+        }
+
+        input[type = text], input[type = password]{
+            width: 400px;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type = text]:focus, input[type = password]:focus{
+            background: #ddd;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <div class="column">
+
+        </div>
+        <div class="column">
+            <br><br><br><br><br><br><br><br><br>
+            <form class="formSignUp"action="">
+                <br>
+                <label for="fullName">Full Name:</label><br>
+                <input type="text" name="fullName" id="fullName" placeholder="Enter Full Name"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="Enter Password"><br>
+                
+                <input type="checkbox">
+                <label for="">Remember me</label><br>
+                <label for="">By creating an account you accept to our <a style="color: dodgerblue;">Terms & Privacy</a></label><br><br>
+            <button type="submit" class="submitButton" style="width: 20%; height: 40%;">Submit</button><br><br>
+            <label for="">Already a member? <a href="Log In.html">Click here</a></label>
+        </form>
+        </div>
+        <div class="column">
+
+        </div>
+    </div>
+
+
+</body>
+</html>
