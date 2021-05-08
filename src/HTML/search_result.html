@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Result</title>
+    <script>
+      function fetch_search_request(query) {
+        var access_key = "ciSDJprk_BRsXoaM0uQC8d5y5_bv2ekXCZv6QxquHLU";
+        var unsplash_API = "https://api.unsplash.com/";
+        var request =
+          unsplash_API +
+          "search/photos?query=" +
+          query +
+          "&client_id=" +
+          access_key;
+        var query_limit = 50;
+
+        fetch(request)
+          .then((response) => response.json())
+          .then(
+            (json) => console.log(json)
+            // {
+            // for (let i = 0; i < query_limit; i++) {
+
+            //     }
+            // }
+          );
+      }
+
+      window.onload = function () {
+        var url = document.location.href,
+          params = url.split("?")[1].split("&"),
+          data = {},
+          tmp;
+        for (var i = 0, l = params.length; i < l; i++) {
+          tmp = params[i].split("=");
+          data[tmp[0]] = tmp[1];
+        }
+
+        fetch_search_request(data.search);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Displaying search result for:</h1>
+  </body>
+</html>
