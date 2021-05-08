@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
     <style>
 
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-image: url("/Users/huybuithanh/Downloads/media/GrpAssn/src/Resources/background.jpeg");
-            background-size: 2550px;
-            background-position: center;
+            background-image: url("/Users/huybuithanh/IdeaProjects/GrpAssn/src/Resources/backgroundSignUp.jpeg");
+            background-size: 1450px 850px;
+            background-position: auto;
         }
 
         h1 {
             text-align: center;
+            color: white;
         }
 
         .row {
@@ -66,12 +68,37 @@
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <img class="icon" src="/Users/huybuithanh/Downloads/media/GrpAssn/src/Resources/icon.jpeg" alt=""> 
+            <a class="navbar-brand" href="#">  Mah Picture</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+      </nav>
+
     <div class="row">
         <div class="column">
 
         </div>
         <div class="column">
-            <br><br><br><br><br><br><br><br><br>
+            <br><br><br><br>
             <form class="formSignUp"action="">
                 <br>
                 <label for="fullName">Full Name:</label><br>

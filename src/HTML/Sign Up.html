@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
     <style>
 
+        
         body{
             font-family: Arial, Helvetica, sans-serif;
-            /*background-image: url("/Users/huybuithanh/Downloads/media/GrpAssn/src/Resources/background.jpeg");*/
-            background-size: 2550px;
-            background-position: center;
+            background-image: url("/Users/huybuithanh/IdeaProjects/GrpAssn/src/Resources/backgroundImage.jpeg");
+            background-size: 1450px 1100px;
+            background-position: auto;
         }
 
         h1 {
             text-align: center;
+            color: white;
         }
 
         .row {
@@ -25,6 +28,16 @@
             padding: 0 4px;
         }
 
+        button{
+            color: black;
+        background-color: #FFC312;
+        }
+
+        button:hover{
+            color: black;
+            background-color: white;
+        }
+        
         /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -65,31 +78,43 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <img class="icon" src="/Users/huybuithanh/Downloads/media/GrpAssn/src/Resources/icon.jpeg" alt=""> 
+            <a class="navbar-brand" href="#">  Mah Picture</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="firstMenuPage.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+      </nav>
 
     <div class="row">
         <div class="column">
-            <br><br><br><br><br><br><br><br><br>
-            <h1>Sign up </h1>
-            <h1>& Join us today</h1>
+            
         </div>
         <div class="column">
             <br><br><br><br>
-            <form class="formSignUp"action="">
-                <label for="fullName">Full Name:</label><br>
+            <form style="background-color:rgba(0,0,0,0.5) !important" class="formSignUp"action="">
+                <label style="color: white;" for="fullName">Full Name:</label><br>
                 <input type="text" name="fullName" placeholder="Enter Full Name"><br>
-                <label for="password">Password:</label><br>
+                <label style="color: white;" for="password">Password:</label><br>
                 <input type="password" name="password" placeholder="Enter Password"><br>
-                <label for="repeatPassword">Repeat Password:</label><br>
+                <label style="color: white;" for="repeatPassword">Repeat Password:</label><br>
                 <input type="password" name="repeatPassword" placeholder="Repeat Password"><br>
-                <label for="Age">Age:</label><br>
+                <label style="color: white;" for="Age">Age:</label><br>
                 <input type="text" name="Age" placeholder="Enter Age"><br>
-                <label for="email">Email: </label><br>
+                <label style="color: white;" for="email">Email: </label><br>
                 <input type="text" name="email" placeholder="Enter Email"><br>
                 <input type="checkbox">
-                <label for="remember">Remember me</label><br>
-                <label for="">By creating an account you accept to our <a style="color: dodgerblue;">Terms & Privacy</a></label><br><br>
-            <button type="submit" class="submitButton" style="width: 20%; height: 40%;">Submit</button><br><br>
-            <label for="">Already a member? <a href="Log In.html">Click here</a></label>
+                <label style="color: white;" for="remember">Remember me</label><br>
+                <label style="color: white;" for="">By creating an account you accept to our <a style="color: dodgerblue;">Terms & Privacy</a></label><br><br>
+            <button type="submit" class="submitButton" style="width: 20%; height: 40%;color: white;">Submit</button><br><br>
+            <label style="color: white;" for="">Already a member? <a href="Log In.html">Click here</a></label>
         </form>
         </div>
         <div class="column">
