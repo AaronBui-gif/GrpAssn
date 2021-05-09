@@ -13,18 +13,12 @@
       }
     </style>
     <script>
-      window.onload = function () {
-        var url = document.location.href,
-          params = url.split("?")[1].split("&"),
-          data = {},
-          tmp;
-        for (var i = 0, l = params.length; i < l; i++) {
-          tmp = params[i].split("=");
-          data[tmp[0]] = tmp[1];
-        }
+      // Open new post on clicked image
+      function open_post(image_id) {
+        document.location.href = url =
+          "post.html?id=" + encodeURIComponent(image_id);
+      }
 
-        fetch_search_request(data.search);
-      };
       window.onload = function () {
         var url = document.location.href,
           params = url.split("?")[1].split("&"),
@@ -48,8 +42,8 @@
           "&client_id=" +
           access_key;
         var query_limit = 8;
-
-        document.getElementById("result").innerHTML += " " + query;
+        console.log(request);
+        document.getElementById("result").innerHTML += query;
 
         fetch(request)
           .then((response) => response.json())
@@ -59,10 +53,14 @@
               index < json.results.length && index < query_limit;
               index++
             ) {
-              var current_id = `res_img_${index}`;
-              console.log(current_id);
-              document.getElementById(current_id).src =
-                json.results[index].urls.regular;
+              var result = json.results[index];
+              var adj_html =
+                `<img src="${result.urls.regular}" class="w-100" id="${result.id}" onClick="open_post(this.id)">` +
+                "<br/>";
+
+              document
+                .getElementById(`frame_${index + 1}`)
+                .insertAdjacentHTML("afterend", adj_html);
             }
           });
       }
@@ -72,28 +70,28 @@
     <h1 id="result">Displaying search result for:</h1>
     <div class="row" id="gallery">
       <div class="col-12 col-sm-6 col-lg-3">
-        <img id="res_img_0" class="w-100" src="/image-1" />
+        <div id="frame_1"></div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
-        <img id="res_img_1" class="w-100" src="/image-2" />
+        <div id="frame_2"></div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
-        <img id="res_img_2" class="w-100" src="/image-3" />
+        <div id="frame_3"></div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
-        <img id="res_img_3" class="w-100" src="/image-4" />
+        <div id="frame_4"></div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
-        <img id="res_img_4" class="w-100" src="/image-5" />
+        <div id="frame_5"></div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
-        <img id="res_img_5" class="w-100" src="/image-6" />
+        <div id="frame_6"></div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
-        <img id="res_img_6" class="w-100" src="/image-7" />
+        <div id="frame_7"></div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
-        <img id="res_img_7" class="w-100" src="/image-8" />
+        <div id="frame_8"></div>
       </div>
     </div>
   </body>
